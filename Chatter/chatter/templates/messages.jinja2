@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Messages</title>
+    <link rel="stylesheet" type="text/css" href="/static/messages.css"/>
+  </head>
+  <body>
+    <div id="chatlog">
+      <ul>
+        {% for item in messages %}
+        <li>{{ item.text }}</li>
+    {% endfor %}
+      </ul>
+    </div>
+    <hr/>
+    <form action="{{request.route_url('send')}}" method="post">
+      <input id="send" name="send" type="submit" value="Send" />
+      <input id="message" name="message" type="text" />
+    </form>
+  </body>
+</html>
